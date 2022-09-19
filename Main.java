@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 
+
 /*
  * Types is the number of parking lots of each type
  * on each floor
