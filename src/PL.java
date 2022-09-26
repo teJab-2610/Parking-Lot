@@ -107,7 +107,6 @@ class ParkingLot {
             for (Floor.Lot lot : floor.lotList) {
                 if (lot.vehicleID.equals(vehicle)) {
                     vehicle = lot.lotType + vehicle;
-                    lot.vehicleID = "";
                     break;
                 }
             }
@@ -133,11 +132,11 @@ class ParkingLot {
             Floor needed;
             for (Floor floor : floors) {
                 for (Floor.Lot lot : floor.lotList)
-                    if (Objects.equals(lot.vehicleID, leaving.substring(1))) {
+                    if (lot.vehicleID.equals(leaving.substring(1))) {
                         occupied = lot;
                         needed = floor;
                         Payment fee = new Payment();
-                        int time = (int) ((System.currentTimeMillis() - lot.startTime) * 3600);
+                        int time = (int) ((System.currentTimeMillis() - lot.startTime) * 0.001);
                         int time1 = time;
                         int fees = 0, elecFees = 0;
                         while (time > 0) {
