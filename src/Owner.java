@@ -1,4 +1,6 @@
-class Owner(){
+import java.util.Scanner;
+
+class Owner{
    
     private String user;
     private String pass;
@@ -19,8 +21,8 @@ class Owner(){
         return false;
     }
    
-    public double addMoney(){
-        this.money += this.money;
+    public void addMoney(double money){
+        this.money += money;
     }
     public double getMoney(){
         return this.money;
@@ -28,14 +30,14 @@ class Owner(){
    
      public void menu(/*arg*/){
         Scanner sc = new Scanner(System.in);
-        if(flag == true){
+        if(flag){
         while(true){
             System.out.println("\tMenu");
             System.out.println("Press 1 to see free slots");
-            System.out.println("Press 2 to check money recieved");
-            System.out.println("Press 3 to remove a vehicle forcefully remove a vechicle.");
+            System.out.println("Press 2 to check money received");
+            System.out.println("Press 3 to remove a vehicle forcefully remove a vehicle.");
             System.out.println("Press 4 to check parked vehicle details.");
-            System.out.println("Press 5 to return to main menu.\n")
+            System.out.println("Press 5 to return to main menu.\n");
             int choice = sc.nextInt();
             switch(choice){
                 case 1:
@@ -43,30 +45,30 @@ class Owner(){
                     break;
    
                 case 2:
-                    System.out.println("Money recieved from previous transactions : "+this.getMoney());
+                    System.out.println("Money received from previous transactions : "+this.getMoney());
                     break;
    
                 case 3:
                     System.out.println("Enter the vehicle id to be removed : ");
                     String removeId = sc.nextLine();
                     //call method to remove that id and display the fare amount until that moment
-                    System.out.println("Vehicle Removed!")
+                    System.out.println("Vehicle Removed!");
                    
                     break;
                
                 case 4:
                     System.out.println("Enter the vehicle id to be removed : ");
-                    String removeId = sc.nextLine();
+                    removeId = sc.nextLine();
                     System.out.println("\tVehicle Details");
-                    for (int i = 0;i < cList.size();i++){
-                        System.out.println("Name            : " + /*printdetails*/);
-                        System.out.println("Vehicle id      : " + /*pintdetails*/);
-                        System.out.println("Vehicle Tyep    :")
-                        System.out.println("Time it entered : "+ /*time*/);
-                        break;
-                    }
+//                    for (int i = 0;i < cList.size();i++){
+//                        System.out.println("Name            : "  /* + printdetails*/);
+//                        System.out.println("Vehicle id      : "  /* + pintdetails*/);
+//                        System.out.println("Vehicle Tyep    :");
+//                        System.out.println("Time it entered : " /* + time*/);
+//                        break;
+//                    }
                 case 5:
-                    continue outermenu;
+                    continue /*outermenu*/;
                 default:
                     System.out.println("Invalid choice!!");
            
@@ -77,3 +79,4 @@ class Owner(){
         }
        
     }
+}
